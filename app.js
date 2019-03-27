@@ -5,12 +5,26 @@ const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
-
+const session = require('koa-session')
 const index = require('./routes/index')
 const users = require('./routes/users')
 
 // error handler
 onerror(app)
+
+//session设置
+app.keys = ['some secret hurr'];
+const CONFIG = {
+key: 'koa:sess', //cookie key (default is koa:sess)
+maxAge: 86400000, // cookie 的过期时间 maxAge in ms (default is 1 days)
+overwrite: true, //是否可以 overwrite (默认 default true)
+httpOnly: true, //cookie 是否只有服务器端可以访问 httpOnly or not (default true)
+signed: true, //签名默认 true
+rolling: false, //在每次请求时强行设置 cookie，这将重置 cookie 过期时间（默认：false）
+renew: false, //(boolean) renew session when session is nearly expired,
+};
+app.use(session(CONFIG, app));
+
 
 // middlewares
 app.use(bodyparser({
