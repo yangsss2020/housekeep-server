@@ -13,7 +13,7 @@
   ],
   "deploy": {
      "production": {
-        "user": "mjz",
+        "user": "yss",
         "host": ["47.102.192.219"],
         "port": "22",
         "ref": "origin/master",
