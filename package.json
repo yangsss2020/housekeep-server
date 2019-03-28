@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "blueimp-md5": "^2.10.0",
+    "connect-mongo": "^2.0.3",
     "debug": "^2.6.3",
     "js-base64": "^2.5.1",
     "koa": "^2.2.0",
