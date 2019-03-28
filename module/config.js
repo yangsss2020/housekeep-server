@@ -6,7 +6,7 @@
 
 var app={
 
-    dbUrl: 'mongodb://localhost:19999/',
+    dbUrl: 'mongodb://localhost:27017/',
 
     dbName: 'house'
 
