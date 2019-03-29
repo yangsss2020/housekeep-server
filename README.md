@@ -2,6 +2,8 @@
 ## 自己瞎鼓捣的,一大堆BUG..
 ## 项目演示链接,服务只有1M,将就看吧,域名备案还没过,只有先上ip地址了
 [http://47.102.192.219/#/home]
+
+## 前段部分地址 [https://github.com/ErrorYs/housrkeeper]
 ## bug
 - [X] keepaivle后页面轮播失效
 - [x] 惊zhe没返回
