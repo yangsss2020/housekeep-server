@@ -283,6 +283,8 @@ router.post('/setaddress',server.setaddress) //设置收货地址
 
 router.post('/upaddress',server.upaddress) //更新收货地址
 
+router.post('/checkaddress',server.checkaddress) //设置默认收货地址
+
 router.get('/getorder',server.getorder) //根据用户id获取订单
 router.post('/setorder',server.setorder) //添加订单
 router.get('/delorder',server.delorder) //根据缩影删除订单

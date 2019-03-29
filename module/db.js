@@ -5,7 +5,7 @@
  * http://mongodb.github.io/node-mongodb-native/3.0/api/
  */
 
-//DB¿â
+//DBï¿½ï¿½
 var MongoDB=require('mongodb');
 var MongoClient =MongoDB.MongoClient;
 const ObjectID = MongoDB.ObjectID;
@@ -14,7 +14,7 @@ var Config=require('./config.js');
 
 class Db{
 
-    static getInstance(){   /*1¡¢µ¥Àý  ¶à´ÎÊµÀý»¯ÊµÀý²»¹²ÏíµÄÎÊÌâ*/
+    static getInstance(){   /*1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 
         if(!Db.instance){
             Db.instance=new Db();
@@ -24,16 +24,16 @@ class Db{
 
     constructor(){
 
-        this.dbClient=''; /*ÊôÐÔ ·Ådb¶ÔÏó*/
-        this.connect();   /*ÊµÀý»¯µÄÊ±ºò¾ÍÁ¬½ÓÊý¾Ý¿â*/
+        this.dbClient=''; /*ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½dbï¿½ï¿½ï¿½ï¿½*/
+        this.connect();   /*Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½*/
 
     }
 
-    connect(){  /*Á¬½ÓÊý¾Ý¿â*/
+    connect(){  /*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½*/
       let _that=this;
       return new Promise((resolve,reject)=>{
-          if(!_that.dbClient){         /*1¡¢½â¾öÊý¾Ý¿â¶à´ÎÁ¬½ÓµÄÎÊÌâ*/
-              MongoClient.connect(Config.dbUrl,(err,client)=>{
+          if(!_that.dbClient){         /*1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½*/
+              MongoClient.connect(Config.dbUrl,{ useNewUrlParser: true },(err,client)=>{
 
                   if(err){
                       reject(err)
@@ -133,7 +133,7 @@ class Db{
             })
         })
     }
-    getObjectId(id){    /*mongodbÀïÃæ²éÑ¯ _id °Ñ×Ö·û´®×ª»»³É¶ÔÏó*/
+    getObjectId(id){    /*mongodbï¿½ï¿½ï¿½ï¿½ï¿½Ñ¯ _id ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½É¶ï¿½ï¿½ï¿½*/
 
         return new ObjectID(id);
     }

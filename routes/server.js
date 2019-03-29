@@ -104,6 +104,25 @@ exports.upaddress = async (ctx) => {
   }
 }
 
+
+//选择当前地址
+exports.checkaddress = async (ctx) => {
+  const _id = ctx.request.body.index
+  await DB.update('address', {
+    check: true
+  }, {
+    check: false
+  })
+  const result = await DB.update('address', {
+    _id: DB.getObjectId(_id)
+  }, {
+    check: true
+  })
+  ctx.body = {
+    code: 0
+  }
+}
+
 exports.getorder = async (ctx) => {
   const userid = ctx.query.userid
   console.log(ctx.query)
@@ -115,10 +134,10 @@ exports.getorder = async (ctx) => {
       code: 0,
       data
     }
-  }else{
-    ctx.body={
-      code:1,
-      msg:'没有订单'
+  } else {
+    ctx.body = {
+      code: 1,
+      msg: '没有订单'
     }
   }
 }
