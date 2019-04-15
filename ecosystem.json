@@ -2,7 +2,7 @@
   "apps": [
      {
         "name": "houserkeeper",
-        "script": "bin.www", 
+        "script": "bin/www", 
         "env": {
            "COMMON_VARIABLE": true
         },
